@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="callmetoo"></div>
+<script>
+    var ip='http://192.168.2.86:6662';
+    $('#callmetoo').load(ip+' #lol');
+    $('body').delegate('#lol', 'submit', function(e) {
+        e.preventDefault();
+        var th = $(this);
+        
+        $.ajax({
+            url: ip+'?phone='+th.find('input[name=phone]').val(),
+            success: function (html) {
+                alert('Вам скоро перезвонят');
+            },
+            error: function() {
+                alert('Попробуйте позже.');
+            }
+        });
+        
+        return false;
+    });
+</script>
+</body>
+</html>
