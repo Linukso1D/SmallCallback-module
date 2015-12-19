@@ -23,7 +23,13 @@ import javax.swing.JOptionPane;
 public class Main extends javax.swing.JFrame {
 private static volatile Main instance;
 	
-public static Main getInstanceMain() throws ClassNotFoundException, java.text.ParseException
+   /**
+    *
+    * @return
+    * @throws ClassNotFoundException
+    * @throws ParseException
+    */
+   public static Main getInstanceMain() throws ClassNotFoundException, java.text.ParseException
    {
 	if(instance == null)
 	{
@@ -209,10 +215,20 @@ jList1.setModel(mod);
    private javax.swing.JList jList1;
    private javax.swing.JScrollPane jScrollPane2;
    // End of variables declaration//GEN-END:variables
+
+   /**
+    *
+    * @return
+    */
    public JList getjList1()
    {
 	return jList1;
    }
+
+   /**
+    *
+    * @param jList1
+    */
    public void setjList1(JList jList1)
    {
 	this.jList1 = jList1;

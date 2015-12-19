@@ -19,9 +19,10 @@ import javax.swing.ListModel;
  */
 public class HttpServer {
 
-   
-
-    public static class SocketProcessor implements Runnable {
+   /**
+    *
+    */
+   public static class SocketProcessor implements Runnable {
 
         private Socket s;
         private InputStream is;

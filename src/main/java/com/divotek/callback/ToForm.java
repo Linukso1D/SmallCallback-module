@@ -20,6 +20,10 @@ public class ToForm
 		listModel= new DefaultListModel();
    }
    
+   /**
+    *
+    * @return
+    */
    public static ToForm getInstance()
    {
 	return ToFormHolder.INSTANCE;
@@ -32,10 +36,19 @@ public class ToForm
 
    }
 
+   /**
+    *
+    * @param phone
+    */
    public void initState(String phone)
    {
 	 listModel.addElement(phone);
    }
+
+   /**
+    *
+    * @return
+    */
    public  DefaultListModel GetListModel()
    {
    return listModel;
