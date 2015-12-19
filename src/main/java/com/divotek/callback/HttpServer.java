@@ -38,8 +38,10 @@ public class HttpServer {
             try {
                 readInputHeaders();
 			writeResponse("<html><body><form id=\"lol\">\n" +
-			  "<input name=\"phone\" />\n" +
-			  "<input type=\"submit\" value=\"OK\">\n" +
+				   "<div class=\"DSCPhone\"  " +
+			  "<input id =\"SCPhone\" name=\"phone\" /> </div>\n" +
+				   "<div class=\"DSCSub\"  " +
+			  "<input id =\"SCSub\" type=\"submit\" value=\"OK\"> </div>\n" +
 			  "</form></body></html>");
 		    
             } catch (Throwable t) {
