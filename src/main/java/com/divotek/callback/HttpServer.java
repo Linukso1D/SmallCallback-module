@@ -38,9 +38,9 @@ public class HttpServer {
             try {
                 readInputHeaders();
 			writeResponse("<html><body><form id=\"lol\">\n" +
-				   "<div class=\"DSCPhone\"  " +
+				   "<div class=\"DSCPhone\">  " +
 			  "<input id =\"SCPhone\" name=\"phone\" /> </div>\n" +
-				   "<div class=\"DSCSub\"  " +
+				   "<div class=\"DSCSub\">  " +
 			  "<input id =\"SCSub\" type=\"submit\" value=\"OK\"> </div>\n" +
 			  "</form></body></html>");
 		    

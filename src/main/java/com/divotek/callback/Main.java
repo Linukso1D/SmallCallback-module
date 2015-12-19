@@ -12,7 +12,9 @@ import java.net.Socket;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -94,6 +96,13 @@ public static Main getInstanceMain() throws ClassNotFoundException, java.text.Pa
       jScrollPane2.setViewportView(jList1);
 
       jButton1.setText("Позвонить");
+      jButton1.addActionListener(new java.awt.event.ActionListener()
+      {
+         public void actionPerformed(java.awt.event.ActionEvent evt)
+         {
+            jButton1ActionPerformed(evt);
+         }
+      });
 
       jLabel1.setText("Список номеров которым нужно позвонить");
 
@@ -127,6 +136,26 @@ public static Main getInstanceMain() throws ClassNotFoundException, java.text.Pa
 
       pack();
    }// </editor-fold>//GEN-END:initComponents
+
+   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
+   {//GEN-HEADEREND:event_jButton1ActionPerformed
+
+ToForm ist = ToForm.getInstance();
+DefaultListModel mod = ist.GetListModel();
+Object get = mod.get(jList1.getSelectedIndex());
+if(!get.toString().contains("Позвонил"))
+{
+get+=" Позвонил";
+}
+else
+{
+   JOptionPane.showMessageDialog(null,"Вы уже звонили на этот номер.");
+}
+mod.setElementAt(get, jList1.getSelectedIndex());
+jList1.setModel(mod);
+
+// TODO add your handling code here:
+   }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
